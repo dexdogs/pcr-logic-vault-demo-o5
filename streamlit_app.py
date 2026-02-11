@@ -5,7 +5,7 @@ from pypdf import PdfReader
 from botocore.exceptions import ClientError
 
 # --- CONFIGURATION ---
-st.set_page_config(page_title="dexdogs | PCR Vault", page_icon="🛡️", layout="wide")
+st.set_page_config(page_title="PCR Logic Vault // dexdogs", layout="wide")
 
 # --- 1. SECURE AWS CONNECTION ---
 try:
@@ -22,7 +22,7 @@ try:
     LAMBDA_FUNC = st.secrets["LAMBDA_FUNCTION_NAME"]
     
 except Exception as e:
-    st.error("❌ AWS Connection Failed. Check Secrets.")
+    st.error("AWS Connection Failed. Check Secrets.")
     st.stop()
 
 # --- 2. INTELLIGENT PARSER (The "No-Fail" Logic) ---
@@ -59,9 +59,9 @@ def parse_insulation_epd(file):
         return "Parsing Error", 0, 0, True, str(e)
 
 # --- 3. UI LAYOUT ---
-st.title("🛡️ dexdogs | PCR Logic Vault")
+st.title("PCR Logic Vault // dexdogs")
 st.markdown("""
-**Automated UL 10010-1 Compliance Audit** *Upload an EPD to generate an immutable carbon receipt.*
+**Automated UL 10010-1 (Building Envelope Thermal Insulation) PCR Audit** *Upload an EPD to generate an immutable carbon receipt.*
 """)
 
 uploaded_epd = st.file_uploader("1. Upload Insulation EPD (PDF)", type="pdf")
@@ -79,9 +79,9 @@ if uploaded_epd:
         st.info(f"**Detected:** {m_type}")
     with col_warn:
         if flag_review:
-            st.warning(f"⚠️ **Action Required:** {log_msg}")
+            st.warning(f"**Action Required:** {log_msg}")
         else:
-            st.success("✅ **Verified:** Data extracted successfully.")
+            st.success("**Verified:** Data extracted successfully.")
 
     # Step C: Human-in-the-Loop Controls (Always Active)
     c1, c2 = st.columns(2)
@@ -136,6 +136,7 @@ if uploaded_epd:
             except Exception as e:
                 st.error(f"System Error: {e}")
 
-# --- 4. META FOOTPRINT ---
+# --- 4. OPTIONAL META FOOTPRINT ---
 st.divider()
 st.caption("☁️ AWS Carbon Footprint Tool: Tracking 0.0004 kg CO2e for this compute cycle.")
+
