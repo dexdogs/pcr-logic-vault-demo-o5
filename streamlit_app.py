@@ -16,9 +16,9 @@ try:
     
     BUCKET = st.secrets["S3_BUCKET_NAME"]
     LAMBDA_FUNC = st.secrets["LAMBDA_FUNCTION_NAME"]
-    st.sidebar.success("Carbon Ledger Connected")
+    st.sidebar.success("PCR Vault Status: AWS Connector Connected")
 except Exception as e:
-    st.sidebar.error("AWS Setup Incomplete")
+    st.sidebar.error("PCR Vault Status: AWS Connector Incomplete")
     st.stop()
 
 # --- 2. THE INSULATION AUDITOR (Logic) ---
@@ -41,7 +41,7 @@ def parse_insulation_epd(file):
 
 # --- 3. UI LAYOUT ---
 st.title("PCR Logic Vault // dexdogs")
-st.caption("Automated UL 10010-1 Compliance via AWS Lambda")
+st.caption("Automated UL 10010-1 (Building Envelope Thermal Insulation) Compliance via AWS Lambda")
 
 uploaded_epd = st.file_uploader("Upload EPD (PDF)", type="pdf")
 
@@ -87,3 +87,4 @@ st.subheader("Meta-Footprint (AWS Cloud Emissions)")
 st.progress(0.02) # Visual representation for demo
 
 st.caption("Reporting 0.0004 kg CO2e for this compute cycle via AWS Carbon Tool.")
+
