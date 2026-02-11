@@ -1,4 +1,4 @@
-# 🛡️ pcr-logic-vault-demo-o5
+# pcr-logic-vault-demo-o5
 ### dexdogs | The Immutable Carbon Ledger for Insulation
 
 **A high-fidelity proof-of-concept for the 2026 "Buy Clean" construction market.**
@@ -7,7 +7,7 @@ This repository demonstrates the **dexdogs AWS Pipeline**, which automates the *
 
 ---
 
-## 🚀 The Hook: Physics-Based Trust
+## The Hook: Physics-Based Trust
 Traditional EPDs (Environmental Product Declarations) are static PDF promises. **dexdogs** turns them into live, audited receipts.
 
 1. **PCR Logic as Code**: Every material batch is audited by an AWS Lambda function against density and R-value tolerances.
@@ -16,7 +16,7 @@ Traditional EPDs (Environmental Product Declarations) are static PDF promises. *
 
 ---
 
-## 🛠️ Technical Architecture
+## Technical Architecture
 
 * **Frontend**: Streamlit (Python)
 * **Compute**: AWS Lambda (Automated Auditor)
@@ -25,14 +25,14 @@ Traditional EPDs (Environmental Product Declarations) are static PDF promises. *
 
 ---
 
-## 🔒 Security & Transparency
+## Security & Transparency
 This is a **Public Repository** used to demonstrate our open-source PCR logic. 
 * **Zero Hardcoded Keys**: All AWS credentials are managed via **GitHub Actions Secrets** and **Streamlit Secrets**.
 * **Audit-Proof**: The underlying S3 ledger is private and protected by IAM policies, ensuring that only verified pipeline data is entered.
 
 ---
 
-## 📈 Stakeholders
+## Stakeholders
 This demo is designed for:
 * **Manufacturers** (e.g., TimberHP, Rmax) to defend high-performance carbon claims.
 * **PCR Writers/Auditors** (e.g., UL Solutions, Thomas Gloria) to automate manual math checks.
