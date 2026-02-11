@@ -83,8 +83,9 @@ if uploaded_epd:
 
 # --- 4. THE "META" FOOTPRINT HOOK ---
 st.divider()
-st.subheader("Meta-Footprint (AWS Cloud Emissions)")
+st.subheader("Optional Meta Footprint (AWS Cloud Emissions)")
 st.progress(0.02) # Visual representation for demo
 
 st.caption("Reporting 0.0004 kg CO2e for this compute cycle via AWS Carbon Tool.")
+
 
